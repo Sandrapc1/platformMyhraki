@@ -5,6 +5,7 @@ import 'package:platform_myhrakii/src/views/bottamnavigation.dart';
 import 'package:platform_myhrakii/src/views/carousel%20slider.dart';
 import 'package:platform_myhrakii/src/views/cart_screen.dart';
 import 'package:platform_myhrakii/src/views/favorite_scree.dart';
+import 'craft_widget.dart';
 import 'footwearrow.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -34,7 +35,7 @@ class HomeScreen extends StatelessWidget {
             icon: const Icon(
               Icons.shopping_cart_outlined,
               size: 28,
-              color:primary,
+              color: primary,
             ),
           ),
           IconButton(
@@ -82,22 +83,32 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             const CategoriesRow(),
-            SizedBox(height: size.height * 0.02),
+            SizedBox(height: size.height * 0.03),
             const CarouselSliderDemo(),
             const SizedBox(height: 10),
             const Text(
               'NEW ARRIVALS',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+              style: TextStyle(fontWeight: FontWeight.w500, fontSize: 22),
             ),
-            SizedBox(height: size.height * 0.02),
-            Row(
-              children: [
-                FootwearRow(size: size),
-              ],
+            SizedBox(height: size.height * 0.03),
+            FootwearRow(size: size),
+            Image(
+              image: const AssetImage('assets/images/line.png'),
+              width: size.width * 0.25,
+              height: size.height * 0.06,
             ),
-            const Text('adsfg'),
-            const Text('adsfg'),
-            const Text('adsfg'),
+            TextButton(
+                onPressed: () {},
+                child: const Text(
+                  'VIEW ALL',
+                  style: TextStyle(
+                      color: primary,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600),
+                )),
+                SizedBox(height:size.height*0.03),
+                CraftWidget(size: size),
+                Text('agddddddddddddddddddddddddd')
           ],
         ),
       ),
@@ -105,3 +116,5 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
+

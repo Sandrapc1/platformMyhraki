@@ -10,7 +10,7 @@ List<Map<String, String>> Category = [
     'categoryName': 'Home & \nLiving'
   },
   {
-    'imagePath': 'assets/images/girldesign.jpg',
+    'imagePath': 'assets/images/womendesign.png',
     'categoryName': "Women's & \n Clothing"
   },
   {
@@ -44,7 +44,7 @@ class CategoriesRow extends StatelessWidget {
             child: Column(
               children: [
                 CircleAvatar(
-                  radius: 38,
+                  radius: 39,
                   backgroundImage: AssetImage(Category[index]['imagePath']!),
                 ),
                 SizedBox(

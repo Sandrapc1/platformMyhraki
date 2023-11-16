@@ -7,7 +7,8 @@ class BottomNavigationBarWidget extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<BottomNavigationBarWidget> createState() => _BottomNavigationBarWidgetState();
+  State<BottomNavigationBarWidget> createState() =>
+      _BottomNavigationBarWidgetState();
 }
 
 class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
@@ -15,6 +16,7 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
 
   @override
   Widget build(BuildContext context) {
+    var size=MediaQuery.of(context).size;
     return Container(
       decoration: const BoxDecoration(
         gradient: LinearGradient(
@@ -29,26 +31,36 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
         type: BottomNavigationBarType.fixed,
         unselectedItemColor: Colors.white,
         selectedItemColor: Colors.white,
-        elevation: 0.0, // Set elevation to 0.0 to remove the shadow
-        items: const [
+        elevation: 0.0,
+        selectedFontSize: 14,
+        unselectedFontSize: 14,
+        items: [
           BottomNavigationBarItem(
             backgroundColor: Colors.transparent,
-            icon: Icon(Icons.home_filled),
+            icon: _currentIndex == 0
+                ? const Icon(Icons.home_filled)
+                :Image.asset('assets/images/home.png',height:size.height*0.027,),
             label: 'HOME',
           ),
           BottomNavigationBarItem(
             backgroundColor: Colors.transparent,
-            icon: Icon(Icons.grid_view),
+            icon: _currentIndex == 1
+                ? const Icon(Icons.grid_view_sharp)
+                : const Icon(Icons.grid_view),
             label: 'CATEGORIES',
           ),
           BottomNavigationBarItem(
             backgroundColor: Colors.transparent,
-            icon: Icon(Icons.notifications),
+            icon: _currentIndex == 2
+                ? const Icon(Icons.verified)
+                : const Icon(Icons.verified_outlined),
             label: 'OFFERS',
           ),
           BottomNavigationBarItem(
             backgroundColor: Colors.transparent,
-            icon: Icon(Icons.account_circle_outlined),
+            icon: _currentIndex == 3
+                ? const Icon(Icons.account_circle_rounded)
+                : const Icon(Icons.account_circle_outlined),
             label: 'ACCOUNT',
           ),
         ],
