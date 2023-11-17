@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:platform_myhrakii/core/colors.dart';
@@ -23,7 +25,7 @@ class _CarouselSliderDemoState extends State<CarouselSliderDemo> {
       children: [
         SizedBox(
           height: 150.0,
-          width: 360,
+          width: 390,
           child: CarouselSlider(
             items: carouselImage.map((carouselImage) {
               return _buildCarouselItem(carouselImage);
@@ -31,7 +33,7 @@ class _CarouselSliderDemoState extends State<CarouselSliderDemo> {
             options: CarouselOptions(
               height: 200.0,
               enlargeCenterPage: true,
-              autoPlay: true,
+              autoPlay: false,
               autoPlayInterval: const Duration(seconds: 2),
               autoPlayAnimationDuration: const Duration(milliseconds: 800),
               autoPlayCurve: Curves.fastOutSlowIn,

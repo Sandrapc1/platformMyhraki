@@ -9,3 +9,4 @@ const Color lettercolor=Color(0xFF8686865);
 const Color lightgrey=Color(0xFFFAF7F5);
 const Color green=Color(0xFF029F4A5);
 const Color light=Color(0xFFFFF4EB);
+const Color viewall=Color.fromARGB(255, 240, 237, 237);

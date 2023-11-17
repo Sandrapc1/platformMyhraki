@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:platform_myhrakii/core/colors.dart';
-import 'package:platform_myhrakii/src/views/CategoriesRow.dart';
+import 'package:platform_myhrakii/src/views/categoriesRow_screen.dart';
 import 'package:platform_myhrakii/src/views/bottamnavigation.dart';
-import 'package:platform_myhrakii/src/views/carousel%20slider.dart';
+import 'package:platform_myhrakii/src/views/carouselslider_screen.dart';
 import 'package:platform_myhrakii/src/views/cart_screen.dart';
 import 'package:platform_myhrakii/src/views/favorite_scree.dart';
-import 'craft_widget.dart';
-import 'footwearrow.dart';
+import 'package:platform_myhrakii/src/views/popularides_screen.dart';
+import 'craft_widget_screen.dart';
+import 'customerdetails_screen.dart';
+import 'footwearrow_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -92,11 +94,19 @@ class HomeScreen extends StatelessWidget {
             ),
             SizedBox(height: size.height * 0.03),
             FootwearRow(size: size),
-            Image(
-              image: const AssetImage('assets/images/line.png'),
-              width: size.width * 0.25,
-              height: size.height * 0.06,
+            SizedBox(height: size.height * 0.03),
+            Container(
+              height: size.height * 0.003,
+              width: size.width * 0.3,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  gradient: const LinearGradient(
+                      colors: [primary, grey, grey, grey, grey],
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight),
+                  color: primary),
             ),
+            SizedBox(height: size.height * 0.02),
             TextButton(
                 onPressed: () {},
                 child: const Text(
@@ -106,9 +116,38 @@ class HomeScreen extends StatelessWidget {
                       fontSize: 16,
                       fontWeight: FontWeight.w600),
                 )),
-                SizedBox(height:size.height*0.03),
-                CraftWidget(size: size),
-                Text('agddddddddddddddddddddddddd')
+            SizedBox(height: size.height * 0.03),
+            CraftWidget(size: size),
+            SizedBox(height: size.height * 0.03),
+            const Text('POPULAR  GIFT  IDEAS',
+                style: TextStyle(fontWeight: FontWeight.w500, fontSize: 22)),
+            PopularIdeasScreen(size: size),
+            SizedBox(height: size.height * 0.03),
+            Container(
+              height: size.height * 0.003,
+              width: size.width * 0.3,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  gradient: const LinearGradient(
+                      colors: [primary, grey, grey, grey, grey],
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight),
+                  color: primary),
+            ),
+            SizedBox(height: size.height * 0.02),
+            TextButton(
+                onPressed: () {},
+                child: const Text(
+                  'VIEW ALL',
+                  style: TextStyle(
+                      color: primary,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600),
+                )),
+                 SizedBox(height: size.height * 0.03),
+            const Text('CUSTOMER REVIEWS',style: TextStyle(fontWeight: FontWeight.w500, fontSize: 22)),
+            SizedBox(height: size.height * 0.03),
+            CustomerDetails(size: size)
           ],
         ),
       ),
@@ -116,5 +155,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-
