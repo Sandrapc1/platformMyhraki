@@ -111,7 +111,10 @@ class CraftWidget extends StatelessWidget {
                   style: TextStyle(
                       color: primary,
                       fontSize: 16,
-                      fontWeight: FontWeight.w600),
+                      fontWeight: FontWeight.w600,
+                      decoration: TextDecoration.underline,
+                decorationColor: primaryy,
+                decorationThickness: 1,),
                 )),
           ],
         ));

@@ -1,5 +1,4 @@
-// https://github.com/Sandrapc1/platformMyhraki.git
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, file_names
 
 import 'package:flutter/material.dart';
 import 'package:platform_myhrakii/core/colors.dart';
@@ -18,7 +17,7 @@ List<Map<String, String>> Category = [
     'categoryName': "Men's & \n Clothing"
   },
   {
-    'imagePath': 'assets/images/jutti.jpg',
+    'imagePath': 'assets/images/bagsandfootwears.jpg',
     'categoryName': 'Bags & \n Footwear'
   },
 ];
@@ -59,7 +58,7 @@ class CategoriesRow extends StatelessWidget {
                       color: primary,
                     ),
                     textAlign: TextAlign.center,
-                    overflow: TextOverflow.visible, 
+                    overflow: TextOverflow.visible,
                   ),
                 ),
               ],

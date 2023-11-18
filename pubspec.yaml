@@ -39,7 +39,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_fonts:
   path_provider: ^2.0.0
-  font_awesome_flutter: 
+  font_awesome_flutter:
+  palette_generator: 
 
 dev_dependencies:
   flutter_test:

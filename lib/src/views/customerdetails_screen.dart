@@ -1,122 +1,111 @@
-// import 'package:flutter/material.dart';
-// import '../../core/colors.dart';
-
-// class CustomerDetails extends StatelessWidget {
-//   const CustomerDetails({
-//     super.key,
-//     required this.size,
-//   });
-
-//   final Size size;
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       height: size.height * 0.2,
-//       width: size.width,
-//       color: pink,
-//       child: ListView.builder(
-//         scrollDirection: Axis.horizontal,
-//         itemBuilder: (context, index) {
-//           return  Padding(
-//             padding: const EdgeInsets.all(10.0),
-//             child: Column(
-//               // crossAxisAlignment: CrossAxisAlignment.center,
-//               // mainAxisAlignment: MainAxisAlignment.center,
-//               children: [
-//                 Container(
-//                   height: size.height*0.15,
-//                   width: size.width,
-//                   color: green,
-//                   child: Row(
-//                     children: [
-//                       Container(
-//                         alignment: Alignment.topCenter,
-//                         height: size.height * 0.05,
-//                         width: size.width * 0.08,
-//                         decoration: BoxDecoration(
-//                           borderRadius: BorderRadius.circular(45),
-//                           image: DecorationImage(image: AssetImage('assets/images/profile.jpg'),fit: BoxFit.cover)
-//                         ),
-                        
-//                       ),
-//                     ],
-//                   ),
-//                 )
-//               ],
-//             ),
-//           );
-//         },
-       
-//       ),
-//     );
-//   }
-// }
-
 // ignore_for_file: must_be_immutable
-
 import 'package:flutter/material.dart';
 import '../../core/colors.dart';
 
 class CustomerDetails extends StatelessWidget {
-  CustomerDetails({
+  const CustomerDetails({
     super.key,
     required this.size,
   });
 
   final Size size;
-  List <Map<String , String>>popularItems = [
-    {'popularImage':'assets/image/profile.jpg','populatText':'Sheena Mittal'},
-   { 'popularImage':'assets/images/profile.jpg','populatText':'Sheena Mittal'}
-  ];
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: size.height * 0.25,
       width: size.width,
-      color: green,
+      color: light,
       child: ListView.builder(
-        itemCount: 2,
+        itemCount: 1,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           return Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
+            padding: EdgeInsets.only(top: size.height * 0.03),
+            child: Row(
               children: [
-                Container(
-                  height: size.height * 0.2,
-                  width: size.width * 0.54,
-                  decoration: BoxDecoration(
-                      color: viewall, borderRadius: BorderRadius.circular(10)),
-                  child: Column(
-                    children: [
-                      SizedBox(height: size.height * 0.01),
-                      Container(
-                        height: size.height * 0.13,
-                        width: size.width * 0.5,
-                        decoration: BoxDecoration(
-                            // color: pink,
-                            borderRadius: BorderRadius.circular(10),
-                            image: DecorationImage(
-                                image: AssetImage(popularItems[index]['popularImage']!),
-                                fit: BoxFit.cover)),
+                IconButton(
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.arrow_back_ios_new_rounded,
+                      size: 16,
+                    )),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(
+                      height: size.height * 0.05,
+                      width: size.width * 0.76,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10)),
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                          left: size.width * 0.15,
+                        ),
+                        child: Row(
+                          children: [
+                            SizedBox(height: size.height * 0.01),
+                            Container(
+                              height: size.height * 0.05,
+                              width: size.width * 0.11,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(25),
+                                  image: const DecorationImage(
+                                      image: AssetImage(
+                                          'assets/images/profile.jpg'),
+                                      fit: BoxFit.cover)),
+                            ),
+                            SizedBox(width: size.width * 0.02),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(
+                                  'Sheena Mittal',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 14),
+                                ),
+                                Row(
+                                  children: [
+                                    SizedBox(width: size.width * 0.01),
+                                    const Icon(Icons.star,
+                                        color: primary, size: 17),
+                                    SizedBox(width: size.width * 0.01),
+                                    const Text('4  | '),
+                                    SizedBox(width: size.width * 0.01),
+                                    const Icon(
+                                      Icons.verified,
+                                      size: 17,
+                                      color: Colors.blue,
+                                    ),
+                                    SizedBox(width: size.width * 0.01),
+                                    const Text('Verified User',
+                                        style: TextStyle(fontSize: 12))
+                                  ],
+                                ),
+                                //   SizedBox(height: size.height*0.05),
+                                // Text('l')
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
-                       Text(
-                       popularItems[index]['populatText']!,
-                        style: const TextStyle(
-                            fontWeight: FontWeight.w500, fontSize: 16),
-                      ),
-                      // const Text(
-                      //   '“I love the Platform very much as it gives\n us great opportunities and also exposure to all small business owners!”',
-                      //   style:
-                      //       TextStyle(color: grey, fontWeight: FontWeight.w400),
-                      // ),
-                    ],
-                  ),
+                    ),
+                    SizedBox(height: size.height * 0.04),
+                    Text(
+                      '“I love the Platform very much as it gives \nus great opportunities and also exposure \nto all small business owners!”',
+                      style:
+                          TextStyle(fontWeight: FontWeight.w400, fontSize: 14),
+                    )
+                  ],
                 ),
+                IconButton(
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.arrow_forward_ios_rounded,
+                      size: 16,
+                    )),
               ],
             ),
           );

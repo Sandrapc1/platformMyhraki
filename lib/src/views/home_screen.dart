@@ -4,11 +4,13 @@ import 'package:platform_myhrakii/src/views/categoriesRow_screen.dart';
 import 'package:platform_myhrakii/src/views/bottamnavigation.dart';
 import 'package:platform_myhrakii/src/views/carouselslider_screen.dart';
 import 'package:platform_myhrakii/src/views/cart_screen.dart';
+import 'package:platform_myhrakii/src/views/craftstories_screen.dart';
 import 'package:platform_myhrakii/src/views/favorite_scree.dart';
 import 'package:platform_myhrakii/src/views/popularides_screen.dart';
 import 'craft_widget_screen.dart';
 import 'customerdetails_screen.dart';
 import 'footwearrow_screen.dart';
+import 'shopbycategory_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -93,7 +95,7 @@ class HomeScreen extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.w500, fontSize: 22),
             ),
             SizedBox(height: size.height * 0.03),
-            FootwearRow(size: size),
+            const FootwearRow(),
             SizedBox(height: size.height * 0.03),
             Container(
               height: size.height * 0.003,
@@ -112,9 +114,13 @@ class HomeScreen extends StatelessWidget {
                 child: const Text(
                   'VIEW ALL',
                   style: TextStyle(
-                      color: primary,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600),
+                    color: primary,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                    decoration: TextDecoration.underline,
+                    decorationColor: primaryy,
+                    decorationThickness: 1,
+                  ),
                 )),
             SizedBox(height: size.height * 0.03),
             CraftWidget(size: size),
@@ -140,14 +146,74 @@ class HomeScreen extends StatelessWidget {
                 child: const Text(
                   'VIEW ALL',
                   style: TextStyle(
-                      color: primary,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600),
+                    color: primary,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                    decoration: TextDecoration.underline,
+                    decorationColor: primaryy,
+                    decorationThickness: 1,
+                  ),
                 )),
-                 SizedBox(height: size.height * 0.03),
-            const Text('CUSTOMER REVIEWS',style: TextStyle(fontWeight: FontWeight.w500, fontSize: 22)),
             SizedBox(height: size.height * 0.03),
-            CustomerDetails(size: size)
+            const Text('CUSTOMER REVIEWS',
+                style: TextStyle(fontWeight: FontWeight.w500, fontSize: 22)),
+            SizedBox(height: size.height * 0.03),
+            CustomerDetails(size: size),
+            SizedBox(height: size.height * 0.03),
+            const Text('SHOP BY CATEGORY',
+                style: TextStyle(fontWeight: FontWeight.w500, fontSize: 22)),
+            SizedBox(height: size.height * 0.03),
+            ShopByCategoryWidget(size: size),
+            SizedBox(height: size.height * 0.03),
+            Text(
+              'LOAD MORE',
+              style: TextStyle(
+                  fontSize: 17,
+                  fontWeight: FontWeight.w600,
+                  decoration: TextDecoration.underline,
+                  decorationColor: primaryy,
+                  decorationThickness: 1,
+                  foreground: Paint()
+                    ..shader = const LinearGradient(colors: [primary, primaryy])
+                        .createShader(
+                            const Rect.fromLTWH(0.0, 0.0, 200.0, 70.0))),
+            ),
+            SizedBox(height: size.height * 0.03),
+            const Text('MOST VIEWED',
+                style: TextStyle(fontWeight: FontWeight.w500, fontSize: 22)),
+            SizedBox(height: size.height * 0.03),
+            const FootwearRow(),
+            SizedBox(height: size.height * 0.03),
+            Container(
+              height: size.height * 0.003,
+              width: size.width * 0.3,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  gradient: const LinearGradient(
+                      colors: [primary, grey, grey, grey, grey],
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight),
+                  color: primary),
+            ),
+            SizedBox(height: size.height * 0.02),
+            TextButton(
+                onPressed: () {},
+                child: const Text(
+                  'VIEW ALL',
+                  style: TextStyle(
+                    color: primary,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                    decoration: TextDecoration.underline,
+                    decorationColor: primaryy,
+                    decorationThickness: 1,
+                  ),
+                )),
+            SizedBox(height: size.height * 0.03),
+            const Text('CRAFT STORIES',
+                style: TextStyle(fontWeight: FontWeight.w500, fontSize: 22)),
+            SizedBox(height: size.height * 0.03),
+            CraftStoriesScreen()
           ],
         ),
       ),

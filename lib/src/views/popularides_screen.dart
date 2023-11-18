@@ -11,8 +11,8 @@ class PopularIdeasScreen extends StatelessWidget {
 
   final Size size;
   List <Map<String , String>>popularItems = [
-    {'popularImage':'assets/images/popularjutti.jpg','populatText':'Footwear'},
-   { 'popularImage':'assets/images/popularbag.jpg','populatText':'Bags'}
+    {'popularImage':'assets/images/jutiwomen.jpg','populatText':'Footwear'},
+   { 'popularImage':'assets/images/womenbag.jpg','populatText':'Bags'}
   ];
 
   @override
