@@ -43,7 +43,7 @@ class CategoriesRow extends StatelessWidget {
             child: Column(
               children: [
                 CircleAvatar(
-                  radius: 39,
+                  radius: 42,
                   backgroundImage: AssetImage(Category[index]['imagePath']!),
                 ),
                 SizedBox(

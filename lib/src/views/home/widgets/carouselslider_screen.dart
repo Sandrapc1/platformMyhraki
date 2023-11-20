@@ -21,11 +21,14 @@ class _CarouselSliderDemoState extends State<CarouselSliderDemo> {
 
   @override
   Widget build(BuildContext context) {
+    var size=MediaQuery.of(context).size;
     return Column(
       children: [
         SizedBox(
-          height: 150.0,
-          width: 390,
+          height:size.height*0.17,
+          // height: 150.0,
+          // width: 400,
+          width: size.width*0.95,
           child: CarouselSlider(
             items: carouselImage.map((carouselImage) {
               return _buildCarouselItem(carouselImage);

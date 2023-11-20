@@ -1,6 +1,6 @@
 // ignore_for_file: must_be_immutable
 import 'package:flutter/material.dart';
-import '../../core/colors.dart';
+import '../../../../core/colors.dart';
 
 class CustomerDetails extends StatelessWidget {
   const CustomerDetails({

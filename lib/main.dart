@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:platform_myhrakii/src/views/home_screen.dart';
+import 'package:platform_myhrakii/src/views/home/home_screen.dart';
 
 void main() {
   runApp(const MyApp());

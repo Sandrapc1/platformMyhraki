@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:platform_myhrakii/core/colors.dart';
-import 'package:platform_myhrakii/src/views/categoriesRow_screen.dart';
-import 'package:platform_myhrakii/src/views/bottamnavigation.dart';
-import 'package:platform_myhrakii/src/views/carouselslider_screen.dart';
+import 'package:platform_myhrakii/src/views/home/widgets/categoriesRow_screen.dart';
+import 'package:platform_myhrakii/src/views/home/widgets/bottamnavigation.dart';
+import 'package:platform_myhrakii/src/views/home/widgets/carouselslider_screen.dart';
 import 'package:platform_myhrakii/src/views/cart_screen.dart';
-import 'package:platform_myhrakii/src/views/craftstories_screen.dart';
+import 'package:platform_myhrakii/src/views/home/widgets/craftstories_screen.dart';
 import 'package:platform_myhrakii/src/views/favorite_scree.dart';
-import 'package:platform_myhrakii/src/views/popularides_screen.dart';
-import 'craft_widget_screen.dart';
-import 'customerdetails_screen.dart';
-import 'footwearrow_screen.dart';
-import 'shopbycategory_screen.dart';
+import 'package:platform_myhrakii/src/views/home/widgets/popularides_screen.dart';
+import 'widgets/craft_widget_screen.dart';
+import 'widgets/customerdetails_screen.dart';
+import 'widgets/footwearrow_screen.dart';
+import 'widgets/shopbycategory_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
