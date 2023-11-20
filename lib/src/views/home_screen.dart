@@ -52,7 +52,21 @@ class HomeScreen extends StatelessWidget {
             },
             icon: const Icon(
               Icons.favorite_border_rounded,
-              size: 29,
+              size: 28,
+              color: primary,
+            ),
+          ),
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const FavoriteScreen(),
+                  ));
+            },
+            icon: const Icon(
+              Icons.notifications_none_rounded,
+              size: 28,
               color: primary,
             ),
           ),
@@ -61,30 +75,44 @@ class HomeScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
-              height: 47,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(25.0),
-                  border: Border.all(color: grey)
-                  // color: Colors.grey[200],
-                  ),
-              margin: const EdgeInsets.all(16.0),
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: const Row(
-                children: [
-                  Icon(Icons.search, color: primaryy),
-                  SizedBox(width: 8.0),
-                  Expanded(
-                    child: TextField(
-                      decoration: InputDecoration(
-                        hintText: 'Search by product',
-                        hintStyle: TextStyle(color: Colors.grey),
-                        border: InputBorder.none,
+            Row(
+              children: [
+                Container(
+                  height: size.height * 0.052,
+                  width: size.width * 0.8,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25.0),
+                      border: Border.all(color: grey)
+                      // color: Colors.grey[200],
                       ),
-                    ),
+                  margin: const EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: const Row(
+                    children: [
+                      Icon(Icons.search, color: primaryy),
+                      SizedBox(width: 8.0),
+                      Expanded(
+                        child: TextField(
+                          decoration: InputDecoration(
+                            hintText: 'Search by product',
+                            hintStyle: TextStyle(color: Colors.grey),
+                            border: InputBorder.none,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+                const CircleAvatar(
+                  backgroundColor: primary,
+                  radius: 18,
+                  child: Icon(
+                    Icons.keyboard_voice_outlined,
+                    color: white,
+                    size: 28,
+                  ),
+                )
+              ],
             ),
             const CategoriesRow(),
             SizedBox(height: size.height * 0.03),
