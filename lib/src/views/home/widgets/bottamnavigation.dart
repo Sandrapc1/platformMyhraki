@@ -51,7 +51,7 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
           ),
           BottomNavigationBarItem(
             backgroundColor: Colors.transparent,
-            icon: _currentIndex == 2
+            icon: _currentIndex == 2 
                 ? const Icon(Icons.verified)
                 : const Icon(Icons.verified_outlined),
             label: 'OFFERS',
